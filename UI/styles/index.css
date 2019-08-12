@@ -11,7 +11,7 @@ body{
 .container{
     width: 80%;
     margin: auto;
-    overflow: hidden;
+    overflow-y: hidden;
 }
 ul{
     margin: 0;
@@ -21,9 +21,9 @@ ul{
 header{
     background: #4a5568;
     color: #ffffff;
-    padding-top:30px;
+    padding-top:15px;
     min-height: 70px;
-    border-bottom:#fed7d7; 3px solid;
+    border-bottom:#fed7d7 3px solid;
 }
 header a{
     color: #ffffff;
@@ -47,7 +47,7 @@ header #branding h1{
 }
 header nav{
     float: right;
-    margin: margin-top: 10px;
+    margin-top: 18px;
 }
 
 header .highlight, header .current a{
@@ -66,9 +66,12 @@ header a:hover{
     text-align: center;
     color: #ffffff;
     background: url('/UI/images/showcase.jpg') no-repeat 0 5px;
-    padding:80px
+    background-size: cover;
+    background-attachment: fixed; 
+    padding:80px;
+    margin: 30px 0;
 }
-showcase p{
+#showcase p{
     font-size: 20px;
 }
 .btn{
@@ -85,9 +88,43 @@ showcase p{
     font-size: 15px
 }
 footer{
-    padding: 20px;
+    padding: 15px;
     color: #000000;
     margin-top: 5px;
     background-color: #cbd5e0;
     text-align: center;
+}
+
+@media(max-width: 500px){
+    header #branding{
+        margin-left: 90px;
+    }
+    header nav{
+        margin-right: 20px;
+    }
+    #showcase{
+        padding: 20px;
+    }
+}
+@media (max-width: 375px){
+    header #branding{
+        margin-left: 70px;
+    }
+    header nav ul li{
+        padding: 0 10px;
+    }
+    #showcase .container p{
+        font-size: 14px;
+    }
+}
+@media(max-width: 320px){
+    header #branding{
+        margin-left: 80px;
+    }
+    header .container{
+        width: 100%;
+    }
+    header nav{
+        margin-right: 30px;
+    }
 }
