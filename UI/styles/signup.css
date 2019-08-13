@@ -18,6 +18,20 @@ ul{
     margin: 0;
     padding: 0;
 }
+button {
+    background-color: #38a169;
+    color:white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+
+}
+button:hover{
+    opacity: 1;
+}
 /*Header */
 header{
     background: #4a5568;
@@ -63,6 +77,25 @@ header a:hover{
 hr{
     border: 1px solid rgb(104, 194, 107);
     margin-bottom: 25px;
+}
+/*buttons*/
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #4a5568;
+}
+.cancelbtn, .signupbtn{
+    float: left;
+    width: 50%;
+}
+.btn::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+@media screen and (max-width: 300px){
+    .cancelbtn, .signupbtn{
+        width: 100%;
+    }
 }
 footer{
     padding: 15px;
