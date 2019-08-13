@@ -1,3 +1,4 @@
+*{box-sizing: border-box;}
 body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
@@ -11,6 +12,7 @@ body{
     width: 80%;
     margin: auto;
     overflow-y: hidden;
+    padding: 16px;
 }
 ul{
     margin: 0;
@@ -57,6 +59,10 @@ header .highlight, header .current a{
 header a:hover{
     color: #cccccc;
     font-weight: bold;
+}
+hr{
+    border: 1px solid rgb(104, 194, 107);
+    margin-bottom: 25px;
 }
 footer{
     padding: 15px;
