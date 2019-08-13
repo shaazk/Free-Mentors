@@ -78,12 +78,19 @@ hr{
     border: 1px solid rgb(104, 194, 107);
     margin-bottom: 25px;
 }
+.form-container{
+    width: 50%;
+    margin: auto;
+    overflow-y: hidden;
+    padding: 16px;
+    background-color: #ffffff;
+}
 /*buttons*/
-.cancelbtn {
+.closebtn {
     padding: 14px 20px;
     background-color: #4a5568;
 }
-.cancelbtn, .signupbtn{
+.closebtn, .loginbtn{
     float: left;
     width: 50%;
 }
@@ -93,7 +100,7 @@ hr{
     display: table;
 }
 @media screen and (max-width: 300px){
-    .cancelbtn, .signupbtn{
+    .closebtn, .loginbtn{
         width: 100%;
     }
 }
@@ -166,4 +173,16 @@ footer{
     header nav{
         margin-right: 30px;
     }
+}
+@media(max-width: 425px){
+    header #branding{
+        margin-left: 80px;
+    }
+    header .container{
+        width: 100%;
+    }
+    header nav{
+        margin-right: 30px;
+    }
+
 }
