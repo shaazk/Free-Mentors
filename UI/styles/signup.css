@@ -6,7 +6,6 @@ body{
     margin: 0;
     background-color: #f4f4f4;
 }
-
 /*Global */
 .container{
     width: 80%;
@@ -58,34 +57,6 @@ header .highlight, header .current a{
 header a:hover{
     color: #cccccc;
     font-weight: bold;
-}
-
-/* showcase*/
-#showcase{
-    min-height: 300px;
-    text-align: center;
-    color: #ffffff;
-    background: url('../images/showcase.jpg') no-repeat 0 5px;
-    background-size: cover;
-    background-attachment: fixed; 
-    padding:80px;
-    margin: 30px 0;
-}
-#showcase p{
-    font-size: 20px;
-}
-.btn{
-    height: 38px;
-    width: 200px;
-    border: 0;
-    background-color: #38a169;
-    text-align: center;
-    text-decoration: none;
-}
-#btn{
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 15px
 }
 footer{
     padding: 15px;
