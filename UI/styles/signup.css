@@ -1,3 +1,4 @@
+*{box-sizing: border-box}
 body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
@@ -6,16 +7,30 @@ body{
     margin: 0;
     background-color: #f4f4f4;
 }
-
 /*Global */
 .container{
     width: 80%;
     margin: auto;
     overflow-y: hidden;
+    padding: 16px;
 }
 ul{
     margin: 0;
     padding: 0;
+}
+button {
+    background-color: #38a169;
+    color:white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+
+}
+button:hover{
+    opacity: 1;
 }
 /*Header */
 header{
@@ -59,33 +74,46 @@ header a:hover{
     color: #cccccc;
     font-weight: bold;
 }
+hr{
+    border: 1px solid rgb(104, 194, 107);
+    margin-bottom: 25px;
+}
+/*buttons*/
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #4a5568;
+}
+.cancelbtn, .signupbtn{
+    float: left;
+    width: 50%;
+}
+.btn::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+@media screen and (max-width: 300px){
+    .cancelbtn, .signupbtn{
+        width: 100%;
+    }
+}
+/*input fiels*/
+input[type=text], input[type=password]
+{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
 
-/* showcase*/
-#showcase{
-    min-height: 300px;
-    text-align: center;
-    color: #ffffff;
-    background: url('../images/showcase.jpg') no-repeat 0 5px;
-    background-size: cover;
-    background-attachment: fixed; 
-    padding:80px;
-    margin: 30px 0;
+
 }
-#showcase p{
-    font-size: 20px;
-}
-.btn{
-    height: 38px;
-    width: 200px;
-    border: 0;
-    background-color: #38a169;
-    text-align: center;
-    text-decoration: none;
-}
-#btn{
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 15px
+input[type=text]:focus, input[type=password]:focus
+{
+    background-color: #ddd;
+    outline: none;
+
 }
 footer{
     padding: 15px;
