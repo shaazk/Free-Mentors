@@ -61,9 +61,9 @@ header a:hover{
     font-weight: bold;
 }
 footer{
-    padding: 15px;
+    padding: 20px;
     color: #000000;
-    margin-top: 5px;
+    margin-bottom: 5px;
     background-color: #cbd5e0;
     text-align: center;
 }
@@ -116,4 +116,49 @@ footer{
         margin-right: 30px;
     }
 
+}
+
+/* all columns on same line in each row*/
+.column{
+    float: left;
+    width: 20%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+
+}
+/* column side by side in each row*/
+@media screen and (max-width: 650px){
+    .column{
+        width: 100%;
+        display: block;
+    }
+}
+/* add shadows*/
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.containers {
+    padding: 0 16px;
+}
+.containers::after, .row::after{
+    content:  "";
+    clear: both;
+    display: table;
+}
+.title{
+    color: grey;
+}
+.button{
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #38a169;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+.button:hover{
+    background-color: #4a5568;
 }
