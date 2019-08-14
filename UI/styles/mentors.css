@@ -1,0 +1,119 @@
+*{box-sizing: border-box}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+}
+/*Global */
+.container{
+    width: 80%;
+    margin: auto;
+    overflow-y: hidden;
+    padding: 16px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+/*Header */
+header{
+    background: #4a5568;
+    color: #ffffff;
+    padding-top:15px;
+    min-height: 70px;
+    border-bottom:#fed7d7 3px solid;
+}
+header a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header li{
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+header #branding{
+    float: left;
+    
+}
+header #branding h1{
+    margin: 0;
+    
+}
+header nav{
+    float: right;
+    margin-top: 18px;
+}
+
+header .highlight, header .current a{
+   color: #38a169;
+   font-weight: bold;
+   
+}
+header a:hover{
+    color: #cccccc;
+    font-weight: bold;
+}
+footer{
+    padding: 15px;
+    color: #000000;
+    margin-top: 5px;
+    background-color: #cbd5e0;
+    text-align: center;
+}
+@media(max-width: 500px){
+    header #branding{
+        margin-left: 90px;
+    }
+    header nav{
+        margin-right: 20px;
+    }
+    
+}
+@media (max-width: 375px){
+    header #branding{
+        margin-left: 70px;
+    }
+    header nav ul li{
+        padding: 0 10px;
+    }
+    
+}
+@media (max-width: 411px){
+    header #branding{
+        margin-left: 70px;
+    }
+    header nav ul li{
+        padding: 0 10px;
+    }
+    
+}
+@media(max-width: 320px){
+    header #branding{
+        margin-left: 80px;
+    }
+    header .container{
+        width: 100%;
+    }
+    header nav{
+        margin-right: 30px;
+    }
+}
+@media(max-width: 425px){
+    header #branding{
+        margin-left: 80px;
+    }
+    header .container{
+        width: 100%;
+    }
+    header nav{
+        margin-right: 30px;
+    }
+
+}
