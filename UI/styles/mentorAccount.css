@@ -66,9 +66,29 @@ tr:nth-child(even){
         width: 100%;
     }
 }
-@media screen and (max-width: 2560) {
+@media screen and (max-width: 2560px) {
     body{
         font-size: 10px;
     }
 
+}
+@media screen and (max-width: 768px) {
+    .hide { display: none; }
+    body{
+        font-size: 10px;
+    }
+    .header{
+        width: 100%;
+    }
+
+}
+button{
+    background-color: #4a5568;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14ps;
+    padding: 10px 20px;
 }
