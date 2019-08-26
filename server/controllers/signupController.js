@@ -14,12 +14,7 @@ class userSignup {
             expertise: req.body.email
 
         }
-        db.push(newUser);
-        return res.status(200).send({
-            success: 'true',
-            message: 'user created successfully',
-            details: newUser
-        })
+
         if (!req.body.firstName) {
             res.status(400).send({
                 success: 'false',
@@ -69,6 +64,12 @@ class userSignup {
             })
 
         }
+        db.push(newUser);
+        return res.status(200).send({
+            success: 'true',
+            message: 'user created successfully',
+            details: newUser
+        })
 
 
     }
