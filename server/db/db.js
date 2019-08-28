@@ -9,8 +9,7 @@ const users = [
         bio: 'i have 4 years of experience',
         occuoation: 'student',
         expertise: 'java, UI design',
-        isAdmin: false,
-        isMentor: false
+
         
 
     },
@@ -24,8 +23,7 @@ const users = [
         bio: 'i have 4 years of experience',
         occuoation: 'student',
         expertise: 'java, UI design',
-        isAdmin: true,
-        isMentor: false
+
     },
     {
         userId: 3,
@@ -37,8 +35,7 @@ const users = [
         bio: 'i have 4 years of experience',
         occuoation: 'student',
         expertise: 'java, UI design',
-        isAdmin: false,
-        isMentor: true
+
     },
     {
         userId: 4,
@@ -50,8 +47,6 @@ const users = [
         bio: 'i have 4 years of experience',
         occuoation: 'student',
         expertise: 'java, UI design',
-        isAdmin: false,
-        isMentor: true
     }
 
 ]
