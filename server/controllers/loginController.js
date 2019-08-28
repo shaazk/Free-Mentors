@@ -4,21 +4,13 @@ class userLogin {
 
     loginAccount(req, res) {
         let emailFound;
-        let passwordFound
+        let indexFound;
 
-        db.map((user, pass) => {
-            if ((user.email == req.params.email) && pass.password == req.params.password) {
+        db.map((user, index) => {
+            if (user.email == req.body.email && user.password == req.body.password) {
                 emailFound = user;
-                passwordFound = pass;
+                indexFound = index;
             }
-            if ((emailFound) && (passwordFound)) {
-                return res.status(200).send({
-                    message: 'user is successfully logged in'
-                })
-            }
-            return res.status(400).send({
-                message: 'invalid email or password '
-            })
 
         });
 
@@ -27,11 +19,20 @@ class userLogin {
             res.status(400).send({
                 message: 'email empty'
             })
-        } else if (!password.body.email) {
+        } else if (!req.body.email) {
             res.status(400).send({
                 message: 'password empty'
             })
         }
+
+        if (emailFound) {
+                return res.status(200).send({
+                    message: 'user is successfully logged in'
+                })
+            }
+            return res.status(400).send({
+                message: 'invalid email or password '
+            })
 
     }
     
