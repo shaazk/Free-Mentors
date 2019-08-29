@@ -13,9 +13,13 @@ Free Mentors is a social initiative where accomplished professionals become role
 3. [Admin can change a user to a mentor](https://shaazk.github.io/Free-Mentors/UI/pages/admin.html)
 4. [Users can view mentors](https://shaazk.github.io/Free-Mentors/UI/pages/mentors.html)
 5. [Users can view a specific mentor](https://shaazk.github.io/Free-Mentors/UI/pages/mentorProfile.html)
-6. [Users can create a mentorship session request]()
+6. [Users can create a mentorship session request with a mentor]()
 7. [A mentor can accept a mentorship session request](https://shaazk.github.io/Free-Mentors/UI/pages/session-request.html)
 8. [A mentor can decline a mentorship session request](https://shaazk.github.io/Free-Mentors/UI/pages/session-request.html)
+9. [Users can view all their mentorship sessions](https://shaazk.github.io/Free-Mentors/UI/pages/menteeAccount.html)
+10. [Users can review a mentor after a mentorship session](https://shaazk.github.io/Free-Mentors/UI/pages/specificMentorReview.html)
+11. [Admin can delete a review demmed inappropriate](https://shaazk.github.io/Free-Mentors/UI/pages/mentor-review.html)
+
 
 
 ## Installation
