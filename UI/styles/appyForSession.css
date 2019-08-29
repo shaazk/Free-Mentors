@@ -1,0 +1,161 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+/*Global */
+.container{
+    width: 80%;
+    margin: auto;
+    overflow-y: hidden;
+    padding: 16px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+button {
+    background-color: #38a169;
+    color:white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+
+}
+button:hover{
+    opacity: 1;
+}
+/*Header */
+header{
+    background: #4a5568;
+    color: #ffffff;
+    padding-top:15px;
+    min-height: 70px;
+    border-bottom:#fed7d7 3px solid;
+}
+header a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header li{
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+header #branding{
+    float: left;
+    
+}
+header #branding h1{
+    margin: 0;
+    
+}
+header nav{
+    float: right;
+    margin-top: 18px;
+}
+
+header .highlight, header .current a{
+   color: #38a169;
+   font-weight: bold;
+   
+}
+header a:hover{
+    color: #cccccc;
+    font-weight: bold;
+}
+
+/*buttons*/
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #4a5568;
+}
+.sendBtn, .cancelbtn{
+    float: left;
+    width: 50%;
+}
+.btn::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+@media screen and (max-width: 300px){
+    .cancelbtn, .signupbtn{
+        width: 100%;
+    }
+}
+/*input fiels*/
+select
+{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+
+
+}
+select
+{
+    background-color: #ddd;
+    outline: none;
+
+}
+footer{
+    padding: 15px;
+    color: #000000;
+    margin-top: 5px;
+    background-color: #cbd5e0;
+    text-align: center;
+}
+
+@media(max-width: 500px){
+    header #branding{
+        margin-left: 90px;
+    }
+    header nav{
+        margin-right: 20px;
+    }
+
+}
+@media (max-width: 375px){
+    header #branding{
+        margin-left: 70px;
+    }
+    header nav ul li{
+        padding: 0 10px;
+    }
+
+}
+@media (max-width: 411px){
+    header #branding{
+        margin-left: 70px;
+    }
+    header nav ul li{
+        padding: 0 10px;
+    }
+
+@media(max-width: 320px){
+    header #branding{
+        margin-left: 80px;
+    }
+    header .container{
+        width: 100%;
+    }
+    header nav{
+        margin-right: 30px;
+    }
+}
