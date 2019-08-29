@@ -36,6 +36,10 @@ button {
 button:hover{
     opacity: 1;
 }
+form{
+    padding-bottom: 10%;
+
+}
 /*Header */
 header{
     background: #4a5568;
@@ -125,6 +129,10 @@ footer{
     margin-top: 5px;
     background-color: #cbd5e0;
     text-align: center;
+    position: fixed;
+    bottom: 0px;
+    overflow: hide;
+    width: 100%;
 }
 
 @media(max-width: 500px){

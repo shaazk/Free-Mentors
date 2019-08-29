@@ -67,6 +67,14 @@ footer{
     margin-bottom: 5px;
     background-color: #cbd5e0;
     text-align: center;
+    position: fixed;
+    bottom: 0px;
+    overflow: hide;
+    width: 100%;
+}
+#fit{
+    padding-bottom: 10%;
+
 }
 @media(max-width: 500px){
     header #branding{
