@@ -1,4 +1,4 @@
-import db from '../db/db';
+/* import db from '../db/db';
 
 class userSignup {
     createUser(req, res) {
@@ -76,4 +76,4 @@ class userSignup {
 
 }
 const usersignup = new userSignup();
-export default usersignup;
+export default usersignup; */

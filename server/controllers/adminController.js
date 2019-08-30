@@ -1,5 +1,4 @@
-import menteeDB from '../db/menteeDB';
-import db from '../db/db';
+/* import db from '../db/db';
 
 class admin{
 
@@ -67,4 +66,4 @@ class admin{
         });    }
 }
 const Admin = new admin();
-export default Admin ;
+export default Admin ; */

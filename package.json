@@ -2,10 +2,10 @@
   "name": "free-mentors",
   "version": "1.0.0",
   "description": "Free Mentors is a social initiative where accomplished professionals become role models to young people to provide free mentorship sessions.",
-  "main": "index.js",
+  "main": "./server/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node_modules/.bin/nodemon app.js --exec babel-node --"
+    "start": "node_modules/.bin/nodemon ./server/server.js --exec babel-node --"
   },
   "repository": {
     "type": "git",
@@ -26,9 +26,11 @@
     "nodemon": "^1.19.1"
   },
   "dependencies": {
+    "@hapi/joi": "^15.1.1",
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
     "eslint": "^6.2.2",
-    "import": "0.0.6",
-    "plugin": "^0.3.3"
+    "jsonwebtoken": "^8.5.1"
   }
 }
