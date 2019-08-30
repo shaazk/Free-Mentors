@@ -1,4 +1,4 @@
-import db from '../db/db';
+/* import db from '../db/db';
 
 class userLogin {
 
@@ -39,4 +39,4 @@ class userLogin {
 }
 const userlogin = new userLogin();
 
-export default userlogin;
+export default userlogin; */
