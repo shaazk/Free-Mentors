@@ -1,7 +1,7 @@
-import app from './app';
+import app from "./app";
 
-const port = process.env.port || 9000;
+const PORT = process.env.PORT || 9000;
 
-const server = app.listen(port, () => console.log(`server running on http://localhost:${port}`));
+const server = app.listen(PORT, () => console.log(`Server is live on port: ${PORT}`));
 
 export default server;
