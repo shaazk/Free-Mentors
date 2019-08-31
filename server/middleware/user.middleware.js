@@ -23,9 +23,7 @@ export const hashPassword = async (req, res, next) => {
 
 
 export  const authanticate = async (req, res, next) => {
-    console.log(req.body.email);
     const user = users.find(user => user.email == req.body.email);
-    console.log(user);
     if(user) {
         const validPassword = await bcrypt.compare(req.body.password, user.password);
         if (validPassword) {
