@@ -10,7 +10,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use('/api/v1/auth', userRoutes);
+app.use('/api/v1', userRoutes);
 
 export default app;
 

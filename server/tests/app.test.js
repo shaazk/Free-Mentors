@@ -5,6 +5,7 @@ import app from "../app";
 chai.use(chaiHttp);
 
 describe('Users: ', () => {
+    
     const data = {
         first_name: "kk",
         last_name: "kk",
@@ -16,6 +17,7 @@ describe('Users: ', () => {
         expertise: "kk"
         
     };
+
     it('should create new user.', (done) => {
         chai.request(app).post('/api/v1/auth/signup').send(data).end((_err, res) => {
             chai.expect(res.status).to.eq(201);
