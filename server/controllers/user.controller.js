@@ -15,7 +15,6 @@ export const signin = (req, res) => {
   });
 };
 
-
 export const signup = (req, res) => {
   const user = new User(users.length + 1, req.body.email, req.body.first_name,
     req.body.last_name, req.body.password, req.body.address, req.body.bio,
@@ -34,78 +33,78 @@ export const signup = (req, res) => {
   });
 };
 
-if (req.user.role == "admin") {
-  const index = users.findIndex(user => user.userId == req.params.userId);
+export const updateUser = (req, res) => {
+  if (req.user.role == "admin") {
+    const index = users.findIndex((user) => user.userId == req.params.userId);
 
-  // users = users.map(u => {
-  //     if (u.userId == req.params.userId) {
-  //         u.role = "mentor"
-  //     }
-  //     return u;
-  // });
+    // users = users.map(u => {
+    //     if (u.userId == req.params.userId) {
+    //         u.role = "mentor"
+    //     }
+    //     return u;
+    // });
 
-  if (index > -1) {
+    if (index > -1) {
       users[index``].role = "mentor";
 
       return res.status(200).json({
-          'status': 200,
-          'data': {
-              'message': 'User account changed to mentor'
-          }
+        status: 200,
+        data: {
+          message: "User account changed to mentor",
+        },
       });
+    }
+    return res.status(404).json({
+      status: 404,
+      data: {
+        message: "User not found",
+      },
+    });
   }
-  return res.status(404).json({
-      'status': 404,
-      'data': {
-          'message': 'User not found'
-      }
-  })
-}
 
-return res.status(400).json({
-  'status': 400,
-  'data': {
-      'message': 'Unauthorised'
-  }
-});
+  return res.status(400).json({
+    status: 400,
+    data: {
+      message: "Unauthorised",
+    },
+  });
+};
 
 export const getAllMentors = (req, res) => {
-  const mentors = users.filter(user => user.role == "mentor");
+  const mentors = users.filter((user) => user.role == "mentor");
   return res.status(200).send({
-      'status': 200,
-      'data': mentors
+    status: 200,
+    data: mentors,
   });
-}
+};
 
 export const getAllMentees = (req, res) => {
-    if (req.user.role == 'admin' || 'mentor') {
-        const mentees = users.filter(user => user.role == "mentee");
-        return res.status(200).send({
-            'status': 200,
-            'data': mentees
-        });
-    } else {
-        return res.status(400).send({
-            'status': 400,
-            'message': 'Unauthorised user!'
+  if (req.user.role === "admin" || req.user.role === "mentor") {
+    const mentees = users.filter((user) => user.role == "mentee");
+    return res.status(200).send({
+      status: 200,
+      data: mentees,
+    });
+  }
+  return res.status(400).send({
+    status: 400,
+    message: "Unauthorised user!",
 
-        })
-    }
-}
+  });
+};
 
 export const getSpecificMentor = (req, res) => {
-  const mentor = users.find(user => user.userId == req.params.mentorId);
+  const mentor = users.find((user) => user.userId == req.params.mentorId);
   if (!mentor) {
-      return res.status(400).send({
-          'success': false,
-          'message': 'invaid id'
-      });
+    return res.status(400).send({
+      success: false,
+      message: "invaid id",
+    });
   }
 
   return res.status(200).send({
-      'success': true,
-      'message': 'valid id',
-      'details': mentor
-  })
-}
-
+    success: true,
+    message: "valid id",
+    details: mentor,
+  });
+};
