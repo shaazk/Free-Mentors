@@ -34,20 +34,40 @@ export const signup = (req, res) => {
   });
 };
 
-export const updateUser = (req, res) => {
-  if (req.user.role === "admin") {
-    const index = users.findIndex((user) => user.userId === req.params.userId);
-    users[index].role = "mentor";
+if (req.user.role == "admin") {
+  const index = users.findIndex(user => user.userId == req.params.userId);
 
-    return res.status(200).json({
-      status: 200,
-      data: {
-        message: "User account changed to mentor",
-      },
-    });
+  // users = users.map(u => {
+  //     if (u.userId == req.params.userId) {
+  //         u.role = "mentor"
+  //     }
+  //     return u;
+  // });
+
+  if (index > -1) {
+      users[index``].role = "mentor";
+
+      return res.status(200).json({
+          'status': 200,
+          'data': {
+              'message': 'User account changed to mentor'
+          }
+      });
   }
-  return 0;
-};
+  return res.status(404).json({
+      'status': 404,
+      'data': {
+          'message': 'User not found'
+      }
+  })
+}
+
+return res.status(400).json({
+  'status': 400,
+  'data': {
+      'message': 'Unauthorised'
+  }
+});
 
 export const getAllMentors = (req, res) => {
   const mentors = users.filter((user) => user.role === "mentor");

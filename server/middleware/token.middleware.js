@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { users } from "../db/data";
+import users from "../db/data";
 
 const verifyToken = (req, res, next) => {
   const token = req.header("token");
