@@ -9,7 +9,7 @@ import validate from "../middleware/validation.middleware";
 import { authanticate, hashPassword, isEmailUsed } from "../middleware/user.middleware";
 import verifyToken from "../middleware/token.middleware";
 import {
-  getAllMentors, signin, signup, updateUser, getAllMentees, getSpecificMentor,
+  getAllMentors, signin, signup, updateUser, getAllMentees, getSpecificMentor, getSpecificMentee,
 } from "../controllers/user.controller";
 
 
@@ -28,7 +28,7 @@ router.get("/mentors/:mentorId", verifyToken, getSpecificMentor);
 
 /* Admin and mentor */
 router.get("/mentees", verifyToken, getAllMentees);
-// router.get('/mentee/:menteeId', getSpecificMentee);
+router.get("/mentee/:menteeId", getSpecificMentee);
 // router.get('/sessions', verifyToken, getAllSessions);
 
 /* Admin */

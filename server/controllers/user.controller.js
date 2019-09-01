@@ -108,3 +108,18 @@ export const getSpecificMentor = (req, res) => {
     details: mentor,
   });
 };
+export const getSpecificMentee = (req, res) => {
+  const mentee = users.find((user) => user.userId == req.params.menteeId);
+  if (!mentee) {
+    return res.status(400).send({
+      success: false,
+      message: "invaid id",
+    });
+  }
+
+  return res.status(200).send({
+    success: true,
+    message: "valid id",
+    details: mentee,
+  });
+};
