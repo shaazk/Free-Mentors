@@ -5,9 +5,9 @@ import viewmentors from '../controllers/viewAllMentorsController';
 import viewSpecificMentor from '../controllers/specificMentorController';
 import Admin from '../controllers/adminController'; */
 
-import { validate } from "../middleware/validation.middleware";
+import validate from "../middleware/validation.middleware";
 import { authanticate, hashPassword, isEmailUsed } from "../middleware/user.middleware";
-import { verifyToken } from "../middleware/token.middleware";
+import verifyToken from "../middleware/token.middleware";
 import {
   getAllMentors, signin, signup, updateUser,
 } from "../controllers/user.controller";
