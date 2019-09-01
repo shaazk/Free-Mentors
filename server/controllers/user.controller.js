@@ -70,9 +70,26 @@ return res.status(400).json({
 });
 
 export const getAllMentors = (req, res) => {
-  const mentors = users.filter((user) => user.role === "mentor");
+  const mentors = users.filter(user => user.role == "mentor");
   return res.status(200).send({
-    status: 200,
-    data: mentors,
+      'status': 200,
+      'data': mentors
   });
-};
+}
+
+export const getAllMentees = (req, res) => {
+    if (req.user.role == 'admin' || 'mentor') {
+        const mentees = users.filter(user => user.role == "mentee");
+        return res.status(200).send({
+            'status': 200,
+            'data': mentees
+        });
+    } else {
+        return res.status(400).send({
+            'status': 400,
+            'message': 'Unauthorised user!'
+
+        })
+    }
+}
+
