@@ -10,6 +10,7 @@ import { authanticate, hashPassword, isEmailUsed } from "../middleware/user.midd
 import verifyToken from "../middleware/token.middleware";
 import {
   getAllMentors, signin, signup, updateUser, getAllMentees, getSpecificMentor, getSpecificMentee, creatSession,
+  getAllSessions,
 } from "../controllers/user.controller";
 
 
@@ -23,13 +24,14 @@ router.post("/auth/signin", validate, authanticate, signin);
 router.get("/mentors", verifyToken, getAllMentors);
 router.get("/mentors/:mentorId", verifyToken, getSpecificMentor);
 router.post("/sessions", verifyToken, creatSession);
+router.get("/sessions", verifyToken, getAllSessions);
+
 // router.post('/sessions/:sessionId/review', verifyToken, createReview);
 
 
 /* Admin and mentor */
 router.get("/mentees", verifyToken, getAllMentees);
 router.get("/mentee/:menteeId", getSpecificMentee);
-// router.get('/sessions', verifyToken, getAllSessions);
 
 /* Admin */
 router.patch("/user/:userId", verifyToken, updateUser);
