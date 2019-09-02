@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-export class Session{
-    constructor(sessionId, mentorId, menteeId, questions, menteeEmail, status = "pending") {
-        this.sessionId = sessionId;
-        this.mentorId = mentorId;
-        this.menteeId = menteeId;
-        this.questions = questions;
-        this.menteeEmail = menteeEmail;
-        this.status = status;
-    }
-}
-=======
 class Session {
   constructor(sessionId, mentorId, menteeId, questions, menteeEmail, status = "pending") {
     this.sessionId = sessionId;
@@ -21,4 +9,4 @@ class Session {
   }
 }
 export default Session;
->>>>>>> abd63f6bebcc298e40163ddcf8ff91e0202cde6a
+
