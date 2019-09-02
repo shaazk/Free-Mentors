@@ -147,3 +147,9 @@ export const creatSession = (req, res) => {
     data: session,
   });
 };
+
+export const getAllSessions = (req, res) => res.status(200).send({
+  success: true,
+  message: "sessions found",
+  data: sessions,
+});
