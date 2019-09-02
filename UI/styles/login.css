@@ -35,7 +35,6 @@ button:hover{
 header{
     background: #4a5568;
     color: #ffffff;
-    padding-top:15px;
     min-height: 70px;
     border-bottom:#fed7d7 3px solid;
 }
@@ -46,6 +45,7 @@ header a{
     font-size: 16px;
 }
 
+
 header li{
     float: left;
     display: inline;
@@ -53,10 +53,13 @@ header li{
 }
 header #branding{
     float: left;
+    margin: 3;
     
 }
 header #branding h1{
-    margin: 0;
+    font-size: 20px;
+    margin-left: 50px;
+
     
 }
 header nav{
@@ -125,7 +128,7 @@ input[type=text]:focus, input[type=password]:focus
 footer{
     padding: 15px;
     color: #000000;
-    margin-top: 5px;
+    margin-top: 10px;
     background-color: #cbd5e0;
     text-align: center;
     
