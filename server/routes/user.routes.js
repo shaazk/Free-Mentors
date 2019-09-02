@@ -11,7 +11,7 @@ import verifyToken from "../middleware/token.middleware";
 import {
   // eslint-disable-next-line max-len
   getAllMentors, signin, signup, updateUser, getAllMentees, getSpecificMentor, getSpecificMentee, creatSession,
-  getAllSessions, acceptSession,
+  getAllSessions, acceptSession, declineSession,
 } from "../controllers/user.controller";
 
 
@@ -41,7 +41,7 @@ router.patch("/user/:userId", verifyToken, updateUser);
 
 /* mentor */
 router.patch("/sessions/:sessionId/accept", verifyToken, acceptSession);
-// router.patch('/sessions/:sessionId/reject', verifyToken, declineSession );
+router.patch("/sessions/:sessionId/reject", verifyToken, declineSession);
 
 
 export default router;
