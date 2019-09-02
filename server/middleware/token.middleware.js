@@ -18,6 +18,7 @@ const verifyToken = (req, res, next) => {
       token: verified,
       email: verified.email,
       role: user.role,
+      id: user.userId,
     }; // Store user token and role for later uses
 
     next();
