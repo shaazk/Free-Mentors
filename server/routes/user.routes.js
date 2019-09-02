@@ -1,32 +1,47 @@
-import express from 'express';
+import express from "express";
 /* import usersignup from '../controllers/signupController';
 import userlogin from '../controllers/loginController';
 import viewmentors from '../controllers/viewAllMentorsController';
 import viewSpecificMentor from '../controllers/specificMentorController';
 import Admin from '../controllers/adminController'; */
 
-import { validate } from "../middleware/validation.middleware";
+import validate from "../middleware/validation.middleware";
 import { authanticate, hashPassword, isEmailUsed } from "../middleware/user.middleware";
-import { verifyToken } from "../middleware/token.middleware";
-import { getAllMentors, signin, signup, updateUser } from "../controllers/user.controller";
+import verifyToken from "../middleware/token.middleware";
+import {
+  // eslint-disable-next-line max-len
+  getAllMentors, signin, signup, updateUser, getAllMentees, getSpecificMentor, getSpecificMentee, creatSession,
+  getAllSessions, acceptSession, declineSession,
+} from "../controllers/user.controller";
 
 
 const router = express.Router();
 
-router.post('/auth/signup', validate, isEmailUsed, hashPassword, signup);
-router.post('/auth/signin', validate, authanticate, signin);
 
-router.get('/mentors', verifyToken, getAllMentors);
-// router.get('/specificMentor/:mentorId', verifyToken, viewSpecificMentor.getMentor);
+/* mentee */
+router.post("/auth/signup", validate, isEmailUsed, hashPassword, signup);
+router.post("/auth/signin", validate, authanticate, signin);
+
+router.get("/mentors", verifyToken, getAllMentors);
+router.get("/mentors/:mentorId", verifyToken, getSpecificMentor);
+router.post("/sessions", verifyToken, creatSession);
+router.get("/sessions", verifyToken, getAllSessions);
+
+// router.post('/sessions/:sessionId/review', verifyToken, createReview);
 
 
 /* Admin and mentor */
-// router.get('/allMentees', Admin.getMentees);
-router.patch('/user/:userId', verifyToken, updateUser);
-
-//router.get('/api/v1/specificMentee/:menteeId', Admin.getMenteeById);
+router.get("/mentees", verifyToken, getAllMentees);
+router.get("/mentee/:menteeId", getSpecificMentee);
 
 /* Admin */
-// router.get('/allUsers', Admin.getAllUsers);
+router.patch("/user/:userId", verifyToken, updateUser);
+// router.delete('/sessions/:sessionId/review', verifyToken, deleteReview);
+
+
+/* mentor */
+router.patch("/sessions/:sessionId/accept", verifyToken, acceptSession);
+router.patch("/sessions/:sessionId/reject", verifyToken, declineSession);
+
 
 export default router;
