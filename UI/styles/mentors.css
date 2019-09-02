@@ -9,21 +9,17 @@ body{
 }
 /*Global */
 .container{
-    width: 80%;
-    margin: auto;
+    width: 100%;
     overflow-y: hidden;
-    padding: 16px;
 }
 ul{
     margin: 0;
     padding: 0;
 }
-
 /*Header */
 header{
     background: #4a5568;
     color: #ffffff;
-    padding-top:15px;
     min-height: 70px;
     border-bottom:#fed7d7 3px solid;
 }
@@ -41,10 +37,14 @@ header li{
 }
 header #branding{
     float: left;
+    margin: 3;
+
     
 }
 header #branding h1{
-    margin: 0;
+    font-size: 20px;
+    margin-left: 50px;
+
     
 }
 header nav{
@@ -60,6 +60,18 @@ header .highlight, header .current a{
 header a:hover{
     color: #cccccc;
     font-weight: bold;
+}
+
+/* showcase*/
+#showcase{
+    min-height: 300px;
+    text-align: center;
+    color: #ffffff;
+    background: url('../images/showcase.jpg') no-repeat 0 5px;
+    background-size: cover;
+    background-attachment: fixed; 
+    padding:80px;
+    margin: 30px 0;
 }
 footer{
     padding: 20px;
