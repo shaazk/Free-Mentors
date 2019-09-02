@@ -9,8 +9,9 @@ import validate from "../middleware/validation.middleware";
 import { authanticate, hashPassword, isEmailUsed } from "../middleware/user.middleware";
 import verifyToken from "../middleware/token.middleware";
 import {
+  // eslint-disable-next-line max-len
   getAllMentors, signin, signup, updateUser, getAllMentees, getSpecificMentor, getSpecificMentee, creatSession,
-  getAllSessions,
+  getAllSessions, acceptSession,
 } from "../controllers/user.controller";
 
 
@@ -39,7 +40,7 @@ router.patch("/user/:userId", verifyToken, updateUser);
 
 
 /* mentor */
-// router.patch('/sessions/:sessionId/accept', verifyToken, acceptSession );
+router.patch("/sessions/:sessionId/accept", verifyToken, acceptSession);
 // router.patch('/sessions/:sessionId/reject', verifyToken, declineSession );
 
 
