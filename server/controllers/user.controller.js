@@ -1,5 +1,6 @@
 import User from "../models/user.model";
-import users from "../db/data";
+import { Session } from "../models/session";
+import { users, sessions } from "../db/data";
 import genToken from "../helpers/token.helper";
 
 
@@ -121,5 +122,28 @@ export const getSpecificMentee = (req, res) => {
     success: true,
     message: "valid id",
     details: mentee,
+  });
+};
+
+export const creatSession = (req, res) => {
+  const session = new Session(sessions.length + 1, req.body.mentorId, req.user.id, req.body.questions, req.user.email);
+  console.log(session);
+  sessions.push(session);
+  // console.log(req.body.questions, req.body.mentorId);
+
+  // const size = sessions.length;
+  // if (size < sessions.push(session)){
+  //     return res.status(201).send({
+  //         status: 201,
+  //         message: "session created"
+  //     });
+  // } else{
+
+  // }
+
+  return res.status(201).send({
+    status: 201,
+    message: "session created",
+    data: session,
   });
 };
