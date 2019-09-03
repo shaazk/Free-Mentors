@@ -7,16 +7,6 @@ body{
     background-color: #ffffff;
 }
 /*Global */
-.container{
-    width: 80%;
-    margin: auto;
-    overflow-y: hidden;
-    padding: 16px;
-}
-ul{
-    margin: 0;
-    padding: 0;
-}
 a{
     color: white;
     text-decoration: none;
@@ -35,11 +25,19 @@ button {
 button:hover{
     opacity: 1;
 }
+/*Global */
+.container{
+    width: 100%;
+    overflow-y: hidden;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
 /*Header */
 header{
     background: #4a5568;
     color: #ffffff;
-    padding-top:15px;
     min-height: 70px;
     border-bottom:#fed7d7 3px solid;
 }
@@ -51,15 +49,20 @@ header a{
 }
 
 header li{
+    float: left;
     display: inline;
     padding: 0 20px 0 20px;
 }
 header #branding{
     float: left;
+    margin: 3;
+
     
 }
 header #branding h1{
-    margin: 0;
+    font-size: 20px;
+    margin-left: 50px;
+
     
 }
 header nav{
@@ -76,6 +79,7 @@ header a:hover{
     color: #cccccc;
     font-weight: bold;
 }
+
 
 /*buttons*/
 .cancelbtn {
