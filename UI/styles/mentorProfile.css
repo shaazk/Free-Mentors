@@ -9,10 +9,8 @@ body{
 }
 /*Global */
 .container{
-    width: 80%;
-    margin: auto;
+    width: 100%;
     overflow-y: hidden;
-    padding: 16px;
 }
 ul{
     margin: 0;
@@ -22,7 +20,6 @@ ul{
 header{
     background: #4a5568;
     color: #ffffff;
-    padding-top:15px;
     min-height: 70px;
     border-bottom:#fed7d7 3px solid;
 }
@@ -40,10 +37,14 @@ header li{
 }
 header #branding{
     float: left;
+    margin: 3;
+
     
 }
 header #branding h1{
-    margin: 0;
+    font-size: 20px;
+    margin-left: 50px;
+
     
 }
 header nav{
@@ -60,6 +61,7 @@ header a:hover{
     color: #cccccc;
     font-weight: bold;
 }
+
 footer{
     padding: 20px;
     color: #000000;

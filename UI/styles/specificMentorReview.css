@@ -7,22 +7,61 @@ body{
     background-color: white;
     border: 0;
 }
-.header{
+.container{
     width: 100%;
-    height: 60px;
-    background-color: #4a5568;
-    color: white;
-    text-align: center;
-    font-size: 30px;
-    padding-top: 0px;
+    overflow-y: hidden;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+/*Header */
+header{
+    background: #4a5568;
+    color: #ffffff;
+    min-height: 70px;
+    border-bottom:#fed7d7 3px solid;
+}
+header a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
 
-    
+header li{
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+header #branding{
+    float: left;
+    margin-right: 9px;
+    padding-right: 6px;
+    margin-top: 20px;
+
 
     
 }
+header #branding h1{
+    font-size: 20px;
+    margin-left: 50px;
 
-.header p{
-    padding-top: 20px
+    
+}
+header nav{
+    float: right;
+    margin-top: 18px;
+}
+
+header .highlight, header .current a{
+   color: #38a169;
+   font-weight: bold;
+   
+}
+header a:hover{
+    color: #cccccc;
+    font-weight: bold;
 }
 .sidebar{
     width: 200px;
