@@ -1,4 +1,4 @@
-import mentorsDB from '../db/mentorsDB';
+/* import mentorsDB from '../db/db';
 
 class viewMentors {
     getAllMentors(req,res){
@@ -10,4 +10,4 @@ class viewMentors {
     }
 }
 const viewmentors = new viewMentors();
-export default viewmentors;
+export default viewmentors; */

@@ -1,0 +1,14 @@
+language: node_js
+sudo: false
+node_js:
+  - "node"
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
+before_script:
+- npm install
+scripts:
+  - npm run test
+after_success: npm run coveralls
