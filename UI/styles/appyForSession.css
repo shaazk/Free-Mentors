@@ -121,9 +121,13 @@ select
 footer{
     padding: 15px;
     color: #000000;
-    margin-top: 5px;
+    margin-top: 10px;
     background-color: #cbd5e0;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
 }
 
 @media(max-width: 500px){

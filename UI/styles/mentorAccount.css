@@ -136,12 +136,11 @@ button{
 footer{
     padding: 15px;
     color: #000000;
-    margin-top: 45px;
+    margin-top: 10px;
     background-color: #cbd5e0;
     text-align: center;
     position: fixed;
-    bottom: 0px;
-    overflow: hide;
+    bottom: 0;
     width: 100%;
-    font-size: 15px
+    
 }
