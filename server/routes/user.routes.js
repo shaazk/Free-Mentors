@@ -3,8 +3,8 @@ import express from "express";
 import validate from "../middleware/validation.middleware";
 import { authanticate, hashPassword, isEmailUsed } from "../middleware/user.middleware";
 import verifyToken from "../middleware/token.middleware";
-import {
-  getAllMentors, signin, signup, updateUser, getAllMentees, getSpecificMentor, getSpecificMentee, creatSession,
+// eslint-disable-next-line max-len
+import { getAllMentors, signin, signup, updateUser, getAllMentees, getSpecificMentor, getSpecificMentee, creatSession,
   getAllSessions, acceptSession, declineSession,
 } from "../controllers/user.controller";
 
