@@ -1,15 +1,9 @@
 import express from "express";
-/* import usersignup from '../controllers/signupController';
-import userlogin from '../controllers/loginController';
-import viewmentors from '../controllers/viewAllMentorsController';
-import viewSpecificMentor from '../controllers/specificMentorController';
-import Admin from '../controllers/adminController'; */
 
 import validate from "../middleware/validation.middleware";
 import { authanticate, hashPassword, isEmailUsed } from "../middleware/user.middleware";
 import verifyToken from "../middleware/token.middleware";
 import {
-  // eslint-disable-next-line max-len
   getAllMentors, signin, signup, updateUser, getAllMentees, getSpecificMentor, getSpecificMentee, creatSession,
   getAllSessions, acceptSession, declineSession,
 } from "../controllers/user.controller";
