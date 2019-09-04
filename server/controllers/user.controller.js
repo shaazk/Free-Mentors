@@ -38,13 +38,6 @@ export const updateUser = (req, res) => {
   if (req.user.role == "admin") {
     const index = users.findIndex((user) => user.userId == req.params.userId);
 
-    // users = users.map(u => {
-    //     if (u.userId == req.params.userId) {
-    //         u.role = "mentor"
-    //     }
-    //     return u;
-    // });
-
     if (index > -1) {
       users[index``].role = "mentor";
 
@@ -129,17 +122,7 @@ export const creatSession = (req, res) => {
   const session = new Session(sessions.length + 1, req.body.mentorId, req.user.id, req.body.questions, req.user.email);
   console.log(session);
   sessions.push(session);
-  // console.log(req.body.questions, req.body.mentorId);
 
-  // const size = sessions.length;
-  // if (size < sessions.push(session)){
-  //     return res.status(201).send({
-  //         status: 201,
-  //         message: "session created"
-  //     });
-  // } else{
-
-  // }
 
   return res.status(201).send({
     status: 201,

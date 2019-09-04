@@ -17,7 +17,6 @@ const validate = (req, res, next) => {
         return res.status(400).send({ status: 400, error: error.details[0].message });
       }
       // Replace req.body with the data after Joi validation
-      // req.body = data;
       next();
       return 0;
     });
