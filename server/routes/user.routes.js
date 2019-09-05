@@ -5,6 +5,7 @@ import { authenticate, hashPassword, isEmailUsed } from "../middleware/user.midd
 import verifyToken from "../middleware/token.middleware";
 import userController from "../controllers/user.controller";
 import sessionController from "../controllers/sessionController";
+import reviewController from "../controllers/reviewController";
 
 
 const router = express.Router();
@@ -19,12 +20,16 @@ router.get("/mentors/:mentorId", verifyToken, userController.getSpecificMentor);
 router.post("/sessions", verifyToken, sessionController.createSession);
 router.get("/sessions", verifyToken, sessionController.getAllSessions);
 
+router.post("/sessions/:sessionId/review", verifyToken, reviewController.createReview);
+
+
 /* Admin and mentor */
 router.get("/mentees", verifyToken, userController.getAllMentees);
 router.get("/mentee/:menteeId", userController.getSpecificMentee);
 
 /* Admin */
 router.patch("/user/:userId", verifyToken, userController.updateUser);
+router.delete("/sessions/:sessionId/review", verifyToken, reviewController.deleteReview);
 
 
 /* mentor */
