@@ -4,12 +4,22 @@ import genToken from "../helpers/token.helper";
 
 const userController = {
   signin: (req, res) => {
-    const gnToken = genToken(req.body.email);
+    const loggedUser = users.find((user) => user.email === req.body.email);
+    const gnToken = genToken(loggedUser.email, loggedUser.role);
     return res.status(200).send({
       status: 200,
       message: "User is successfully logged in",
       data: {
         token: gnToken,
+        id: loggedUser.userId,
+        firstName: loggedUser.first_name,
+        lastName: loggedUser.last_name,
+        email: loggedUser.email,
+        address: loggedUser.address,
+        occupation: loggedUser.occupation,
+        bio: loggedUser.bio,
+        expertise: loggedUser.expertise,
+        role: loggedUser.role,
       },
     });
   },
@@ -24,6 +34,14 @@ const userController = {
       message: "User created successfully",
       data: {
         token: gnToken,
+        id: user.userId,
+        firstName: user.first_name,
+        lastName: user.last_name,
+        email: user.email,
+        address: user.address,
+        occupation: user.occupation,
+        bio: user.bio,
+        expertise: user.expertise,
       },
     });
   },
@@ -46,8 +64,8 @@ const userController = {
         },
       });
     }
-    return res.status(403).json({
-      status: 403,
+    return res.status(401).json({
+      status: 401,
       data: {
         message: "Unauthorised access",
       },
