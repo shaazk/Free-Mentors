@@ -1,8 +1,15 @@
-import { sessions } from "../db/data";
+import { sessions, users } from "../db/data";
 import Session from "../models/session";
 
 const sessionController = {
   createSession: (req, res) => {
+    const mentor = users.find((user) => user.userId === req.body.mentorId);
+    if (!mentor || mentor.role !== "mentor") {
+      return res.status(404).json({
+        status: 404,
+        message: "mentor not found",
+      });
+    }
     const session = new Session(sessions.length + 1,
       req.body.mentorId, req.user.id, req.body.questions, req.user.email);
 

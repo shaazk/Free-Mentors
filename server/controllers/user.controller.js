@@ -71,13 +71,7 @@ const userController = {
       },
     });
   },
-  getAllMentees: (req, res) => {
-    const mentees = users.filter((user) => user.role === "mentee");
-    return res.status(200).send({
-      status: 200,
-      data: mentees,
-    });
-  },
+
   getAllMentors: (req, res) => {
     const mentors = users.filter((user) => user.role === "mentor");
     return res.status(200).send({
@@ -87,7 +81,7 @@ const userController = {
   },
   getSpecificMentor: (req, res) => {
     const mentor = users.find((user) => user.userId.toString() === req.params.mentorId);
-    if (!mentor) {
+    if (!mentor || mentor.role !== "mentor") {
       return res.status(404).send({
         success: false,
         message: "Mentor does not exist, check your ID",
@@ -95,7 +89,6 @@ const userController = {
     }
     return res.status(200).send({
       success: true,
-      message: "valid id",
       details: mentor,
     });
   },

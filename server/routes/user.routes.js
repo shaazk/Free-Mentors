@@ -24,7 +24,6 @@ router.post("/sessions/:sessionId/review", verifyToken, reviewController.createR
 
 
 /* Admin and mentor */
-router.get("/mentees", verifyToken, userController.getAllMentees);
 router.get("/mentee/:menteeId", userController.getSpecificMentee);
 
 /* Admin */
