@@ -1,4 +1,4 @@
 import jwt from "jsonwebtoken";
 
-const genToken = (Email) => jwt.sign({ email: Email }, process.env.KEY);
+const genToken = (email, role) => jwt.sign({ email, role }, process.env.KEY);
 export default genToken;
