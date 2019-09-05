@@ -20,6 +20,10 @@ const signinSchema = {
     .required(),
 };
 
+export const reviewSchema = Joi.object().keys({
+  score: Joi.number().required(),
+  remark: Joi.string().min(3).max(50).trim(),
+});
 // export the schema
 export default {
   "/auth/signup": signupSchema,
