@@ -1,41 +1,35 @@
 import express from "express";
 
 import validate from "../middleware/validation.middleware";
-import { authanticate, hashPassword, isEmailUsed } from "../middleware/user.middleware";
+import { authenticate, hashPassword, isEmailUsed } from "../middleware/user.middleware";
 import verifyToken from "../middleware/token.middleware";
-// eslint-disable-next-line max-len
-import { getAllMentors, signin, signup, updateUser, getAllMentees, getSpecificMentor, getSpecificMentee, creatSession,
-  getAllSessions, acceptSession, declineSession,
-} from "../controllers/user.controller";
+import userController from "../controllers/user.controller";
+import sessionController from "../controllers/sessionController";
 
 
 const router = express.Router();
 
 
 /* mentee */
-router.post("/auth/signup", validate, isEmailUsed, hashPassword, signup);
-router.post("/auth/signin", validate, authanticate, signin);
+router.post("/auth/signup", validate, isEmailUsed, hashPassword, userController.signup);
+router.post("/auth/signin", validate, authenticate, userController.signin);
 
-router.get("/mentors", verifyToken, getAllMentors);
-router.get("/mentors/:mentorId", verifyToken, getSpecificMentor);
-router.post("/sessions", verifyToken, creatSession);
-router.get("/sessions", verifyToken, getAllSessions);
-
-// router.post('/sessions/:sessionId/review', verifyToken, createReview);
-
+router.get("/mentors", verifyToken, userController.getAllMentors);
+router.get("/mentors/:mentorId", verifyToken, userController.getSpecificMentor);
+router.post("/sessions", verifyToken, sessionController.createSession);
+router.get("/sessions", verifyToken, sessionController.getAllSessions);
 
 /* Admin and mentor */
-router.get("/mentees", verifyToken, getAllMentees);
-router.get("/mentee/:menteeId", getSpecificMentee);
+router.get("/mentees", verifyToken, userController.getAllMentees);
+router.get("/mentee/:menteeId", userController.getSpecificMentee);
 
 /* Admin */
-router.patch("/user/:userId", verifyToken, updateUser);
-// router.delete('/sessions/:sessionId/review', verifyToken, deleteReview);
+router.patch("/user/:userId", verifyToken, userController.updateUser);
 
 
 /* mentor */
-router.patch("/sessions/:sessionId/accept", verifyToken, acceptSession);
-router.patch("/sessions/:sessionId/reject", verifyToken, declineSession);
+router.patch("/sessions/:sessionId/accept", verifyToken, sessionController.acceptSession);
+router.patch("/sessions/:sessionId/reject", verifyToken, sessionController.declineSession);
 
 
 export default router;
