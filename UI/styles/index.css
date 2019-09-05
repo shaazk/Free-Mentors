@@ -32,7 +32,6 @@ header a{
 }
 
 header li{
-    float: left;
     display: inline;
     padding: 0 20px 0 20px;
 }
@@ -73,6 +72,8 @@ header a:hover{
     background-attachment: fixed; 
     padding:80px;
     margin: 30px 0;
+    height: 460px;
+
     
 }
 #showcase p{
