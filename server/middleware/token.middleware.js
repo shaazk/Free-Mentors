@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import users from "../db/data";
+import { users } from "../db/data";
 
 const verifyToken = (req, res, next) => {
   const token = req.header("token");
@@ -20,11 +20,10 @@ const verifyToken = (req, res, next) => {
       role: user.role,
       id: user.userId,
     }; // Store user token and role for later uses
-
     next();
   } catch (error) {
-    res.status(400).send({
-      status: 400,
+    res.status(401).send({
+      status: 401,
       message: "Invalid token!",
     });
   }

@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import { users } from "../db/data";
 
 export const isEmailUsed = (req, res, next) => {
-  const user = users.find((user) => user.email == req.body.email);
+  const user = users.find((user) => user.email === req.body.email);
   if (user) {
     return res.status(409).send({
       status: 409,
@@ -11,6 +11,7 @@ export const isEmailUsed = (req, res, next) => {
     });
   }
   next();
+  return 0;
 };
 
 export const hashPassword = async (req, res, next) => {
@@ -20,9 +21,8 @@ export const hashPassword = async (req, res, next) => {
   next();
 };
 
-
-export const authanticate = async (req, res, next) => {
-  const user = users.find((user) => user.email == req.body.email);
+export const authenticate = async (req, res, next) => {
+  const user = users.find((user) => user.email === req.body.email);
   if (user) {
     const validPassword = await bcrypt.compare(req.body.password, user.password);
     if (validPassword) {
@@ -39,4 +39,5 @@ export const authanticate = async (req, res, next) => {
       message: "Email is not match, please try again.",
     });
   }
+  return 0;
 };
