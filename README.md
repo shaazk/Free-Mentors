@@ -1,5 +1,5 @@
 # Free-Mentors
-
+[![Coverage Status](https://coveralls.io/repos/github/shaazk/Free-Mentors/badge.svg?branch=develop)](https://coveralls.io/github/shaazk/Free-Mentors?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/c6be0c516e415fe49499/maintainability)](https://codeclimate.com/github/shaazk/Free-Mentors/maintainability) [![Build Status](https://travis-ci.org/shaazk/Free-Mentors.svg?branch=develop)](https://travis-ci.org/shaazk/Free-Mentors)
 ## Project Description
 Free Mentors is a social initiative where accomplished professionals become role models to young people to provide free mentorship sessions.
 
