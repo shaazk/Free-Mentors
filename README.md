@@ -30,8 +30,9 @@ Free Mentors is a social initiative where accomplished professionals become role
   cd Free Mentors
 
 ## Author
+
+| [<img src="https://github.com/shaazk.png" width="100px;"><br><sub><b>Mutesi Sharon Kiiza</b></sub>](https://github.com/shaazk/Free-Mentors) |
+| :------------------------------------------------------------------------------------------------------------------------ |
 Mutesi Sharon Kiiza
 
 sharonuase@gmail.com
-
-
